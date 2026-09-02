@@ -1,3 +1,24 @@
 ---
-return Astro.redirect('/es/', 302);
+// return Astro.redirect('/es/', 302);
 ---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <script is:inline>
+      const hash = window.location.hash;
+      const isAuthToken =
+        hash.includes('invite_token') ||
+        hash.includes('recovery_token') ||
+        hash.includes('confirmation_token');
+      if (isAuthToken) {
+        window.location.replace('/admin/' + hash);
+      } else {
+        window.location.replace('/es/');
+      }
+    </script>
+  </body>
+</html>
