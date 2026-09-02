@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getSiteSettings } from '../lib/content';
+import { localizedPath } from '../lib/i18n';
+
+const settings = await getSiteSettings('es');
+---
+
+<BaseLayout
+	locale="es"
+	title="Página no encontrada | Marko Surf School"
+	description="La página solicitada no existe."
+	{settings}
+>
+	<section class="section">
+		<div class="container not-found">
+			<p class="eyebrow">404</p>
+			<h1>Página no encontrada</h1>
+			<p>The page you requested could not be found. / La página que buscas no existe.</p>
+			<div class="actions">
+				<a class="button" href={localizedPath('es')}>Ir al inicio</a>
+				<a class="secondary" href={localizedPath('en')}>Go to English home</a>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.not-found {
+		max-width: 46rem;
+		text-align: center;
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.secondary {
+		align-self: center;
+		color: var(--ocean-800);
+		font-weight: 700;
+	}
+</style>

@@ -1,0 +1,26 @@
+pageType: kitesurf
+seoTitle: Clases de kitesurf en Máncora
+seoDescription: Clases seguras de kitesurf para principiantes y riders en progreso en la costa norte del Perú.
+title: Clases de kitesurf
+intro: Desarrolla habilidades seguras con la cometa mediante una enseñanza clara y progresiva en el viento constante de Máncora.
+body: Comienza con la lectura del viento y el control de la cometa antes de avanzar al body drag, water start y navegación. Cada sesión sigue las condiciones y tu progreso.
+images:
+  - image: /images/kitesurf-lesson.svg
+    alt: Clase de kitesurf en la costa cerca de Máncora
+pricing:
+  - name: Sesión de descubrimiento
+    duration: 2 horas
+    price: Consulta el precio actual
+    notes: Teoría del viento, sistemas de seguridad y primer control de cometa.
+  - name: Clase de progresión
+    duration: 2 horas
+    price: Consulta el precio actual
+    notes: Habilidades elegidas según tu nivel actual.
+includes:
+  - Cometa, tabla, arnés y equipo de seguridad
+  - Evaluación de condiciones y lugar
+  - Enseñanza individual
+availabilityNote: Las sesiones requieren viento adecuado y pueden trasladarse al mejor lugar cercano.
+contactCta:
+  text: Indica tu nivel, peso y fechas preferidas para planificar la sesión adecuada.
+  buttonLabel: Consultar clases de kitesurf

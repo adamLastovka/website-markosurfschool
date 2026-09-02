@@ -1,0 +1,9 @@
+---
+import HomePage from '../../components/HomePage.astro';
+import { getPage, getSiteSettings } from '../../lib/content';
+
+const [page, settings] = await Promise.all([getPage('en', 'home'), getSiteSettings('en')]);
+if (page.pageType !== 'home') throw new Error('Invalid English home content');
+---
+
+<HomePage locale="en" {page} {settings} />

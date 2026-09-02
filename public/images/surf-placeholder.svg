@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Surfing in M�ncora</title>
+  <desc id="desc">Stylized ocean wave and surfboard placeholder</desc>
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#65c9df"/><stop offset="1" stop-color="#f7d6a1"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="970" cy="150" r="70" fill="#fff2b3"/>
+  <path d="M0 500c170-120 310-95 450 5 125 90 245 100 360 5 120-100 250-115 390-15v305H0z" fill="#087f8c"/>
+  <path d="M0 570c180-105 355-80 520 25 165 104 390 88 680-15v220H0z" fill="#075985" opacity=".85"/>
+  <path d="M605 255c32 0 48 45 48 105v250c0 65-18 120-48 120s-48-55-48-120V360c0-60 16-105 48-105z" fill="#f97316" transform="rotate(18 605 493)"/>
+</svg>

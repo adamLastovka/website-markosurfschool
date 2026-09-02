@@ -1,0 +1,13 @@
+siteName: Marko Surf School
+tagline: Clases de surf y kitesurf en Máncora, Perú
+nav:
+  home: Inicio
+  surf: Surf
+  kitesurf: Kitesurf
+  contact: Contacto
+footerText: Clases personales de surf y kitesurf en Máncora, Perú.
+whatsappNumber: "51999999999"
+whatsappDefaultMessage: ¡Hola! Quisiera información sobre las clases en Máncora.
+instagramUrl: https://www.instagram.com/
+facebookUrl: https://www.facebook.com/
+ogImage: /images/surf-lesson.svg

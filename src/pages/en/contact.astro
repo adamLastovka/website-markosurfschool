@@ -1,0 +1,9 @@
+---
+import ContactPage from '../../components/ContactPage.astro';
+import { getPage, getSiteSettings } from '../../lib/content';
+
+const [page, settings] = await Promise.all([getPage('en', 'contact'), getSiteSettings('en')]);
+if (page.pageType !== 'contact') throw new Error('Invalid English contact content');
+---
+
+<ContactPage locale="en" {page} {settings} />

@@ -1,0 +1,89 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { localizedPath, type Locale } from '../lib/i18n';
+import '../styles/global.css';
+
+interface Props {
+	locale: Locale;
+	currentPath?: string;
+	settings: CollectionEntry<'settings'>['data'];
+	title: string;
+	description: string;
+}
+
+const { locale, currentPath = '', settings, title, description } = Astro.props;
+const canonical = new URL(localizedPath(locale, currentPath), Astro.site);
+const esURL = new URL(localizedPath('es', currentPath), Astro.site);
+const enURL = new URL(localizedPath('en', currentPath), Astro.site);
+const ogImage = settings.ogImage ? new URL(settings.ogImage, Astro.site) : undefined;
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'SportsActivityLocation',
+	name: settings.siteName,
+	description,
+	url: canonical.href,
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Máncora',
+		addressRegion: 'Piura',
+		addressCountry: 'PE',
+	},
+};
+---
+
+<!doctype html>
+<html lang={locale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#087f8c" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="canonical" href={canonical} />
+		<link rel="alternate" hreflang="es" href={esURL} />
+		<link rel="alternate" hreflang="en" href={enURL} />
+		<link rel="alternate" hreflang="x-default" href={esURL} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		{ogImage && <meta property="og:image" content={ogImage} />}
+		<meta property="og:locale" content={locale === 'es' ? 'es_PE' : 'en_US'} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<title>{title}</title>
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+		<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+	</head>
+	<body>
+		<a class="skip-link" href="#main">{locale === 'es' ? 'Saltar al contenido' : 'Skip to content'}</a>
+		<Header locale={locale} settings={settings} currentPath={currentPath} />
+		<main id="main"><slot /></main>
+		<Footer settings={settings} />
+		<script is:inline>
+			if (window.netlifyIdentity) {
+				window.netlifyIdentity.on('init', (user) => {
+					if (!user && window.location.hash.includes('invite_token')) window.netlifyIdentity.open();
+				});
+			}
+		</script>
+	</body>
+</html>
+
+<style>
+	.skip-link {
+		position: fixed;
+		z-index: 100;
+		top: .5rem;
+		left: .5rem;
+		padding: .65rem 1rem;
+		border-radius: .5rem;
+		background: var(--ink);
+		color: white;
+		transform: translateY(-150%);
+	}
+	.skip-link:focus { transform: translateY(0); }
+</style>

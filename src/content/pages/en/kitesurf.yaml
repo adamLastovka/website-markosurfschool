@@ -1,0 +1,26 @@
+pageType: kitesurf
+seoTitle: Kitesurf lessons in Mancora
+seoDescription: Safety-focused kitesurf coaching for first-time and progressing riders on Peru's north coast.
+title: Kitesurf lessons
+intro: Build confident kite skills with clear, step-by-step coaching in Mancora's steady coastal wind.
+body: Start with wind awareness and kite control before progressing to body dragging, water starts, and riding. Every session follows the conditions and your individual progress.
+images:
+  - image: /images/kitesurf-lesson.svg
+    alt: Kitesurf coaching on the coast near Mancora
+pricing:
+  - name: Discovery session
+    duration: 2 hours
+    price: Ask for current price
+    notes: Wind theory, safety systems, and first kite control.
+  - name: Progression lesson
+    duration: 2 hours
+    price: Ask for current price
+    notes: Skills selected for your current level.
+includes:
+  - Kite, board, harness, and safety equipment
+  - Condition and location assessment
+  - Individual instruction
+availabilityNote: Sessions require suitable wind and may move to the best nearby spot.
+contactCta:
+  text: Share your level, weight, and preferred dates so we can plan the right session.
+  buttonLabel: Ask about kitesurf lessons

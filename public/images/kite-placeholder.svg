@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Kitesurfing in M�ncora</title>
+  <desc id="desc">Stylized kite flying above the Pacific Ocean</desc>
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#42bcd4"/><stop offset="1" stop-color="#dff7fa"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <path d="M0 570c180-70 360-55 540 30s400 80 660-20v220H0z" fill="#0e7490"/>
+  <path d="M300 175Q585 20 840 190 585 130 300 175z" fill="#f97316"/>
+  <path d="M300 175Q585 285 840 190 585 130 300 175z" fill="#fbbe24"/>
+  <path d="M575 157 645 615M555 157 625 615" stroke="#334155" stroke-width="3" opacity=".55"/>
+  <circle cx="635" cy="625" r="17" fill="#172554"/>
+  <path d="m635 642-35 73m35-73 50 62m-50-62-5-73" stroke="#172554" stroke-width="13" stroke-linecap="round"/>
+</svg>

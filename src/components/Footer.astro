@@ -1,0 +1,70 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	settings: CollectionEntry<'settings'>['data'];
+}
+
+const { settings } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer>
+	<div class="footer-inner">
+		<div>
+			<strong>{settings.siteName}</strong>
+			<p>{settings.footerText}</p>
+		</div>
+		<div class="social-links">
+			{settings.instagramUrl && <a href={settings.instagramUrl} rel="me">Instagram</a>}
+			{settings.facebookUrl && <a href={settings.facebookUrl} rel="me">Facebook</a>}
+		</div>
+		<small>© {year} {settings.siteName}</small>
+	</div>
+</footer>
+
+<style>
+	footer {
+		padding-block: 3.5rem;
+		background: var(--ocean-950);
+		color: rgb(255 255 255 / 78%);
+	}
+
+	.footer-inner {
+		display: grid;
+		width: min(calc(100% - 2rem), var(--content-width));
+		margin-inline: auto;
+		gap: 1.5rem;
+	}
+
+	strong {
+		color: var(--white);
+		font-family: 'Manrope', system-ui, sans-serif;
+		font-size: 1.2rem;
+	}
+
+	p {
+		max-width: 32rem;
+		margin: 0.35rem 0 0;
+	}
+
+	.social-links {
+		display: flex;
+		gap: 1rem;
+	}
+
+	a {
+		color: var(--white);
+	}
+
+	@media (min-width: 48rem) {
+		.footer-inner {
+			grid-template-columns: 1fr auto;
+			align-items: end;
+		}
+
+		small {
+			grid-column: 1 / -1;
+		}
+	}
+</style>

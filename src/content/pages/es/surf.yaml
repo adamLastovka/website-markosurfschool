@@ -1,0 +1,26 @@
+pageType: surf
+seoTitle: Clases de surf en Máncora
+seoDescription: Clases privadas y para grupos pequeños en aguas cálidas, para principiantes y surfistas en progreso.
+title: Clases de surf
+intro: Atrapa tu primera ola o mejora tu técnica en uno de los destinos de surf más conocidos del Perú.
+body: Las clases comienzan con una breve explicación en la playa y continúan con práctica guiada en el agua. Elegimos la mejor playa cercana según tu nivel y el oleaje del día.
+images:
+  - image: /images/surf-lesson.svg
+    alt: Instructor ayudando a un surfista en Máncora
+pricing:
+  - name: Clase privada
+    duration: 2 horas
+    price: Consulta el precio actual
+    notes: Enseñanza individual y equipo incluido.
+  - name: Grupo pequeño
+    duration: 2 horas
+    price: Consulta el precio actual
+    notes: Para amigos o familia con experiencia similar.
+includes:
+  - Tabla de surf elegida para tu nivel
+  - Leash y lycra
+  - Explicación de seguridad y enseñanza en el agua
+availabilityNote: Los horarios dependen de las mareas y las condiciones del mar.
+contactCta:
+  text: Cuéntame tu nivel de experiencia y las fechas que prefieres.
+  buttonLabel: Consultar clases de surf

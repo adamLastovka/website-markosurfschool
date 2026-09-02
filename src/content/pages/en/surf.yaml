@@ -1,0 +1,26 @@
+pageType: surf
+seoTitle: Surf lessons in Mancora
+seoDescription: Private and small-group surf lessons in warm water for beginners and progressing surfers.
+title: Surf lessons
+intro: Catch your first wave or sharpen your technique in one of Peru's best-known surf towns.
+body: Lessons begin with a short beach briefing, followed by guided practice in the water. We choose the best nearby break for your level and the day's swell.
+images:
+  - image: /images/surf-lesson.svg
+    alt: Instructor helping a surfer in Mancora
+pricing:
+  - name: Private lesson
+    duration: 2 hours
+    price: Ask for current price
+    notes: One-to-one coaching and equipment included.
+  - name: Small group
+    duration: 2 hours
+    price: Ask for current price
+    notes: For friends or family with similar experience.
+includes:
+  - Surfboard selected for your level
+  - Leash and rash guard
+  - Safety briefing and water coaching
+availabilityNote: Lesson times depend on tides and surf conditions.
+contactCta:
+  text: Tell me your experience level and preferred dates.
+  buttonLabel: Ask about surf lessons

@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+
+interface GalleryImage {
+	image: string;
+	alt: string;
+	caption?: string;
+}
+
+interface Props {
+	images: GalleryImage[];
+	label: string;
+}
+
+const { images, label } = Astro.props;
+---
+
+<div class="gallery" role="region" aria-label={label} tabindex="0">
+	{images.map((item, index) => (
+		<figure>
+			<Image
+				src={item.image}
+				alt={item.alt}
+				width={1200}
+				height={800}
+				loading={index === 0 ? 'eager' : 'lazy'}
+				fetchpriority={index === 0 ? 'high' : undefined}
+				format="webp"
+			/>
+			{item.caption && <figcaption>{item.caption}</figcaption>}
+		</figure>
+	))}
+</div>
+
+<style>
+	.gallery {
+		display: grid;
+		overflow-x: auto;
+		grid-auto-columns: 88%;
+		grid-auto-flow: column;
+		gap: 0.8rem;
+		border-radius: var(--radius);
+		scroll-snap-type: x mandatory;
+		scrollbar-width: thin;
+	}
+
+	figure {
+		position: relative;
+		overflow: hidden;
+		min-height: 20rem;
+		margin: 0;
+		border-radius: var(--radius);
+		background: var(--ocean-100);
+		scroll-snap-align: start;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	figcaption {
+		position: absolute;
+		right: 0.8rem;
+		bottom: 0.8rem;
+		left: 0.8rem;
+		padding: 0.7rem 0.9rem;
+		border-radius: 0.7rem;
+		background: rgb(7 54 66 / 78%);
+		color: var(--white);
+		font-size: 0.9rem;
+		backdrop-filter: blur(8px);
+	}
+</style>

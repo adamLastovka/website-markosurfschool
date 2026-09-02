@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">M�ncora beach</title>
+  <desc id="desc">Stylized tropical beach at sunset</desc>
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff9f68"/><stop offset=".6" stop-color="#ffd7a8"/><stop offset="1" stop-color="#6dd5df"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="790" cy="285" r="105" fill="#fff2ad" opacity=".9"/>
+  <path d="M0 490c250-55 435-25 610 65 205 105 400 70 590-5v250H0z" fill="#0e7490"/>
+  <path d="M0 650c290-80 570-60 850 60 100 42 215 45 350 10v80H0z" fill="#f1c784"/>
+  <path d="M170 650c70-185 75-330 15-435m4 92c-65-55-115-70-170-58m168 68c50-75 110-105 180-95" stroke="#25433a" stroke-width="24" fill="none" stroke-linecap="round"/>
+  <path d="M180 245c-95-55-155-55-180-20m190 20c85-65 155-68 210-30" stroke="#39705c" stroke-width="36" fill="none" stroke-linecap="round"/>
+</svg>

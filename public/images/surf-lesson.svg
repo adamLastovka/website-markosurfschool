@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Surf lesson placeholder</title>
+  <desc id="desc">Stylized ocean waves beneath a warm sunset</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7c977"/>
+      <stop offset="1" stop-color="#dff5f7"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0284a8"/>
+      <stop offset="1" stop-color="#075985"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="930" cy="170" r="85" fill="#fff3c4"/>
+  <path d="M0 470c170-90 290 50 450-20 210-90 300 70 480-15 110-52 200-22 270 15v350H0Z" fill="url(#sea)"/>
+  <path d="M0 575c170-110 330 75 520-25 190-100 350 80 680-35" fill="none" stroke="#fff" stroke-width="28" opacity=".86"/>
+  <path d="M515 410c70-52 152-13 169 58-62-37-132-23-170 28-20-24-20-60 1-86Z" fill="#073642"/>
+  <path d="M565 350c26 0 47 21 47 47s-21 47-47 47-47-21-47-47 21-47 47-47Z" fill="#f06449"/>
+  <text x="70" y="720" fill="#fff" font-family="Arial, sans-serif" font-size="44" font-weight="700">Replace with your surf photos in the CMS</text>
+</svg>

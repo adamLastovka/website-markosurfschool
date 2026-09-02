@@ -1,0 +1,205 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+i18n:
+  structure: multiple_folders
+  locales: [es, en]
+  default_locale: es
+
+media_folder: public/images
+public_folder: /images
+
+site_url: https://markosurfschool.netlify.app
+display_url: https://markosurfschool.netlify.app
+logo_url: /favicon.svg
+
+collections:
+  - name: settings
+    label: Site settings
+    label_singular: Site settings
+    folder: src/content/settings
+    extension: yaml
+    format: yaml
+    create: false
+    delete: false
+    i18n: true
+    identifier_field: siteName
+    fields:
+      - { label: Site name, name: siteName, widget: string, i18n: true }
+      - { label: Tagline, name: tagline, widget: string, i18n: true }
+      - label: Navigation
+        name: nav
+        widget: object
+        i18n: true
+        fields:
+          - { label: Home, name: home, widget: string, i18n: true }
+          - { label: Surf, name: surf, widget: string, i18n: true }
+          - { label: Kitesurf, name: kitesurf, widget: string, i18n: true }
+          - { label: Contact, name: contact, widget: string, i18n: true }
+      - { label: Footer text, name: footerText, widget: text, i18n: true }
+      - { label: WhatsApp number, name: whatsappNumber, widget: string, hint: "Country code + number, digits only", i18n: duplicate }
+      - { label: Default WhatsApp message, name: whatsappDefaultMessage, widget: text, i18n: true }
+      - { label: Instagram URL, name: instagramUrl, widget: string, required: false, i18n: duplicate }
+      - { label: Facebook URL, name: facebookUrl, widget: string, required: false, i18n: duplicate }
+      - { label: Social sharing image, name: ogImage, widget: image, required: false, i18n: duplicate }
+
+  - name: home
+    label: Home page
+    folder: src/content/pages
+    extension: yaml
+    format: yaml
+    create: false
+    delete: false
+    i18n: true
+    identifier_field: heroTitle
+    filter: { field: pageType, value: home }
+    fields:
+      - { label: Page type, name: pageType, widget: hidden, default: home, i18n: duplicate }
+      - { label: Search title, name: seoTitle, widget: string, i18n: true }
+      - { label: Search description, name: seoDescription, widget: text, i18n: true }
+      - { label: Hero title, name: heroTitle, widget: string, i18n: true }
+      - { label: Hero subtitle, name: heroSubtitle, widget: text, i18n: true }
+      - { label: About title, name: aboutTitle, widget: string, i18n: true }
+      - { label: About text, name: aboutBody, widget: text, i18n: true }
+      - label: Gallery
+        name: gallery
+        widget: list
+        i18n: true
+        min: 1
+        fields:
+          - { label: Image, name: image, widget: image, i18n: duplicate }
+          - { label: Alternative text, name: alt, widget: string, i18n: true }
+          - { label: Caption, name: caption, widget: string, required: false, i18n: true }
+      - label: Surf panel
+        name: surfTeaser
+        widget: object
+        i18n: true
+        fields:
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Summary, name: summary, widget: text, i18n: true }
+          - { label: Button label, name: buttonLabel, widget: string, i18n: true }
+      - label: Kitesurf panel
+        name: kitesurfTeaser
+        widget: object
+        i18n: true
+        fields:
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Summary, name: summary, widget: text, i18n: true }
+          - { label: Button label, name: buttonLabel, widget: string, i18n: true }
+
+  - name: surf
+    label: Surf page
+    folder: src/content/pages
+    extension: yaml
+    format: yaml
+    create: false
+    delete: false
+    i18n: true
+    identifier_field: title
+    filter: { field: pageType, value: surf }
+    fields:
+      - { label: Page type, name: pageType, widget: hidden, default: surf, i18n: duplicate }
+      - { label: Search title, name: seoTitle, widget: string, i18n: true }
+      - { label: Search description, name: seoDescription, widget: text, i18n: true }
+      - { label: Heading, name: title, widget: string, i18n: true }
+      - { label: Introduction, name: intro, widget: text, i18n: true }
+      - { label: Lesson information, name: body, widget: text, i18n: true }
+      - label: Images
+        name: images
+        widget: list
+        i18n: true
+        min: 1
+        fields:
+          - { label: Image, name: image, widget: image, i18n: duplicate }
+          - { label: Alternative text, name: alt, widget: string, i18n: true }
+          - { label: Caption, name: caption, widget: string, required: false, i18n: true }
+      - label: Prices
+        name: pricing
+        widget: list
+        i18n: true
+        min: 1
+        fields:
+          - { label: Name, name: name, widget: string, i18n: true }
+          - { label: Duration, name: duration, widget: string, i18n: true }
+          - { label: Price, name: price, widget: string, i18n: true }
+          - { label: Notes, name: notes, widget: string, required: false, i18n: true }
+      - { label: Included items, name: includes, widget: list, i18n: true }
+      - { label: Availability note, name: availabilityNote, widget: text, required: false, i18n: true }
+      - label: Contact call to action
+        name: contactCta
+        widget: object
+        i18n: true
+        fields:
+          - { label: Text, name: text, widget: text, i18n: true }
+          - { label: Button label, name: buttonLabel, widget: string, i18n: true }
+
+  - name: kitesurf
+    label: Kitesurf page
+    folder: src/content/pages
+    extension: yaml
+    format: yaml
+    create: false
+    delete: false
+    i18n: true
+    identifier_field: title
+    filter: { field: pageType, value: kitesurf }
+    fields:
+      - { label: Page type, name: pageType, widget: hidden, default: kitesurf, i18n: duplicate }
+      - { label: Search title, name: seoTitle, widget: string, i18n: true }
+      - { label: Search description, name: seoDescription, widget: text, i18n: true }
+      - { label: Heading, name: title, widget: string, i18n: true }
+      - { label: Introduction, name: intro, widget: text, i18n: true }
+      - { label: Lesson information, name: body, widget: text, i18n: true }
+      - label: Images
+        name: images
+        widget: list
+        i18n: true
+        min: 1
+        fields:
+          - { label: Image, name: image, widget: image, i18n: duplicate }
+          - { label: Alternative text, name: alt, widget: string, i18n: true }
+          - { label: Caption, name: caption, widget: string, required: false, i18n: true }
+      - label: Prices
+        name: pricing
+        widget: list
+        i18n: true
+        min: 1
+        fields:
+          - { label: Name, name: name, widget: string, i18n: true }
+          - { label: Duration, name: duration, widget: string, i18n: true }
+          - { label: Price, name: price, widget: string, i18n: true }
+          - { label: Notes, name: notes, widget: string, required: false, i18n: true }
+      - { label: Included items, name: includes, widget: list, i18n: true }
+      - { label: Availability note, name: availabilityNote, widget: text, required: false, i18n: true }
+      - label: Contact call to action
+        name: contactCta
+        widget: object
+        i18n: true
+        fields:
+          - { label: Text, name: text, widget: text, i18n: true }
+          - { label: Button label, name: buttonLabel, widget: string, i18n: true }
+
+  - name: contact
+    label: Contact page
+    folder: src/content/pages
+    extension: yaml
+    format: yaml
+    create: false
+    delete: false
+    i18n: true
+    identifier_field: title
+    filter: { field: pageType, value: contact }
+    fields:
+      - { label: Page type, name: pageType, widget: hidden, default: contact, i18n: duplicate }
+      - { label: Search title, name: seoTitle, widget: string, i18n: true }
+      - { label: Search description, name: seoDescription, widget: text, i18n: true }
+      - { label: Heading, name: title, widget: string, i18n: true }
+      - { label: Introduction, name: intro, widget: text, i18n: true }
+      - { label: Phone, name: phone, widget: string, i18n: duplicate }
+      - { label: Email, name: email, widget: string, i18n: duplicate }
+      - { label: WhatsApp message, name: whatsappMessage, widget: text, i18n: true }
+      - { label: Location, name: location, widget: text, i18n: true }
+      - { label: Google Maps embed URL, name: mapEmbedUrl, widget: string, required: false, i18n: duplicate }

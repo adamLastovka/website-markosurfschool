@@ -1,0 +1,87 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../lib/i18n';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WhatsAppButton from './WhatsAppButton.astro';
+
+type ContactData = Extract<CollectionEntry<'pages'>['data'], { pageType: 'contact' }>;
+
+interface Props {
+	locale: Locale;
+	page: ContactData;
+	settings: CollectionEntry<'settings'>['data'];
+}
+
+const { locale, page, settings } = Astro.props;
+---
+
+<BaseLayout
+	locale={locale}
+	currentPath="contact"
+	title={page.seoTitle}
+	description={page.seoDescription}
+	settings={settings}
+>
+	<header class="page-hero">
+		<div class="container">
+			<p class="eyebrow">{locale === 'es' ? 'Hablemos' : 'Let’s talk'}</p>
+			<h1>{page.title}</h1>
+			<p>{page.intro}</p>
+		</div>
+	</header>
+
+	<section class="section">
+		<div class="container contact-grid">
+			<div class="panel primary-contact">
+				<h2>WhatsApp</h2>
+				<p>{page.phone}</p>
+				<WhatsAppButton
+					number={settings.whatsappNumber}
+					message={page.whatsappMessage}
+					label={locale === 'es' ? 'Abrir WhatsApp' : 'Open WhatsApp'}
+				/>
+			</div>
+			<div class="panel">
+				<h2>{locale === 'es' ? 'Ubicación' : 'Location'}</h2>
+				<p>{page.location}</p>
+				<h3>Email</h3>
+				<a href={`mailto:${page.email}`}>{page.email}</a>
+			</div>
+		</div>
+		{page.mapEmbedUrl && (
+			<iframe
+				class="map"
+				src={page.mapEmbedUrl}
+				title={locale === 'es' ? 'Mapa de la ubicación' : 'Location map'}
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"
+			/>
+		)}
+	</section>
+</BaseLayout>
+
+<style>
+	.contact-grid {
+		display: grid;
+		gap: 1.25rem;
+	}
+
+	.primary-contact {
+		background: var(--ocean-100);
+	}
+
+	.map {
+		display: block;
+		width: min(calc(100% - 2rem), var(--content-width));
+		height: 25rem;
+		margin: 2rem auto 0;
+		border: 0;
+		border-radius: var(--radius);
+	}
+
+	@media (min-width: 48rem) {
+		.contact-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+</style>

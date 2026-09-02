@@ -1,0 +1,98 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { localizedPath, type Locale } from '../lib/i18n';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+	locale: Locale;
+	currentPath?: string;
+	settings: CollectionEntry<'settings'>['data'];
+}
+
+const { locale, currentPath = '', settings } = Astro.props;
+const links = [
+	{ href: localizedPath(locale), label: settings.nav.home, path: '' },
+	{ href: localizedPath(locale, 'surf'), label: settings.nav.surf, path: 'surf' },
+	{ href: localizedPath(locale, 'kitesurf'), label: settings.nav.kitesurf, path: 'kitesurf' },
+	{ href: localizedPath(locale, 'contact'), label: settings.nav.contact, path: 'contact' },
+];
+---
+
+<header class="site-header">
+	<div class="header-inner">
+		<a class="brand" href={localizedPath(locale)}>{settings.siteName}</a>
+		<nav aria-label={locale === 'es' ? 'Navegación principal' : 'Main navigation'}>
+			{links.map((link) => (
+				<a href={link.href} aria-current={currentPath === link.path ? 'page' : undefined}>
+					{link.label}
+				</a>
+			))}
+		</nav>
+		<LanguageSwitcher locale={locale} path={currentPath} />
+	</div>
+</header>
+
+<style>
+	.site-header {
+		position: sticky;
+		z-index: 20;
+		top: 0;
+		border-bottom: 1px solid rgb(7 54 66 / 10%);
+		background: rgb(255 253 247 / 92%);
+		backdrop-filter: blur(14px);
+	}
+
+	.header-inner {
+		display: grid;
+		width: min(calc(100% - 2rem), var(--content-width));
+		min-height: 4.75rem;
+		margin-inline: auto;
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.brand {
+		color: var(--ocean-950);
+		font-family: 'Manrope', system-ui, sans-serif;
+		font-size: 1.15rem;
+		font-weight: 800;
+		text-decoration: none;
+	}
+
+	nav {
+		display: flex;
+		overflow-x: auto;
+		grid-column: 1 / -1;
+		grid-row: 2;
+		gap: 1rem;
+		padding-bottom: 0.65rem;
+	}
+
+	nav a {
+		flex: none;
+		color: #45626a;
+		font-size: 0.9rem;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	nav a[aria-current='page'],
+	nav a:hover {
+		color: var(--ocean-800);
+	}
+
+	@media (min-width: 48rem) {
+		.header-inner {
+			grid-template-columns: 1fr auto auto;
+		}
+
+		nav {
+			overflow: visible;
+			grid-column: auto;
+			grid-row: auto;
+			gap: 1.5rem;
+			padding: 0;
+		}
+	}
+</style>

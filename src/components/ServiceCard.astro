@@ -1,0 +1,59 @@
+---
+interface Props {
+	title: string;
+	summary: string;
+	buttonLabel: string;
+	href: string;
+	variant: 'surf' | 'kitesurf';
+}
+
+const { title, summary, buttonLabel, href, variant } = Astro.props;
+---
+
+<article class:list={['service-card', variant]}>
+	<div>
+		<p class="eyebrow">{variant === 'surf' ? 'Ocean' : 'Wind'}</p>
+		<h2>{title}</h2>
+		<p>{summary}</p>
+	</div>
+	<a class="button" href={href}>{buttonLabel}</a>
+</article>
+
+<style>
+	.service-card {
+		display: flex;
+		overflow: hidden;
+		min-height: 25rem;
+		padding: clamp(1.5rem, 5vw, 3rem);
+		border-radius: var(--radius);
+		flex-direction: column;
+		justify-content: space-between;
+		background-position: center;
+		background-size: cover;
+		box-shadow: var(--shadow);
+	}
+
+	.service-card > div {
+		max-width: 32rem;
+		padding: 1.25rem;
+		border-radius: 1rem;
+		background: rgb(255 253 247 / 88%);
+		backdrop-filter: blur(10px);
+	}
+
+	.service-card .button {
+		align-self: flex-start;
+	}
+
+	.surf {
+		background:
+			linear-gradient(rgb(7 54 66 / 15%), rgb(7 54 66 / 15%)),
+			url('/images/surf-lesson.svg');
+	}
+
+	.kitesurf {
+		background:
+			linear-gradient(rgb(7 54 66 / 15%), rgb(7 54 66 / 15%)),
+			url('/images/kitesurf-lesson.svg');
+	}
+</style>

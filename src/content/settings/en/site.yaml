@@ -1,0 +1,13 @@
+siteName: Marko Surf School
+tagline: Surf and kitesurf lessons in Mancora, Peru
+nav:
+  home: Home
+  surf: Surf
+  kitesurf: Kitesurf
+  contact: Contact
+footerText: Personal surf and kitesurf instruction in Mancora, Peru.
+whatsappNumber: "51999999999"
+whatsappDefaultMessage: Hello! I would like to ask about lessons in Mancora.
+instagramUrl: https://www.instagram.com/
+facebookUrl: https://www.facebook.com/
+ogImage: /images/surf-lesson.svg

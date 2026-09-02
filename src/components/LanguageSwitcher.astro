@@ -1,0 +1,44 @@
+---
+import {
+	alternateLocale,
+	localeName,
+	localizedPath,
+	type Locale,
+} from '../lib/i18n';
+
+interface Props {
+	locale: Locale;
+	path?: string;
+}
+
+const { locale, path = '' } = Astro.props;
+const targetLocale = alternateLocale(locale);
+---
+
+<a
+	class="language-switcher"
+	href={localizedPath(targetLocale, path)}
+	lang={targetLocale}
+	hreflang={targetLocale}
+	aria-label={`${localeName(targetLocale)} language`}
+>
+	{targetLocale.toUpperCase()}
+</a>
+
+<style>
+	.language-switcher {
+		display: grid;
+		width: 2.75rem;
+		height: 2.75rem;
+		place-items: center;
+		border: 1px solid rgb(7 54 66 / 20%);
+		border-radius: 999px;
+		font-size: 0.8rem;
+		font-weight: 800;
+		text-decoration: none;
+	}
+
+	.language-switcher:hover {
+		background: var(--ocean-100);
+	}
+</style>

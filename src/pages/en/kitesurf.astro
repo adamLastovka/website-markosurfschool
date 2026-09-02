@@ -1,0 +1,9 @@
+---
+import ActivityPage from '../../components/ActivityPage.astro';
+import { getPage, getSiteSettings } from '../../lib/content';
+
+const [page, settings] = await Promise.all([getPage('en', 'kitesurf'), getSiteSettings('en')]);
+if (page.pageType !== 'kitesurf') throw new Error('Invalid English kitesurf content');
+---
+
+<ActivityPage locale="en" {page} {settings} />

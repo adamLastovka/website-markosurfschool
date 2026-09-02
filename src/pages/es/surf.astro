@@ -1,0 +1,9 @@
+---
+import ActivityPage from '../../components/ActivityPage.astro';
+import { getPage, getSiteSettings } from '../../lib/content';
+
+const [page, settings] = await Promise.all([getPage('es', 'surf'), getSiteSettings('es')]);
+if (page.pageType !== 'surf') throw new Error('Invalid Spanish surf content');
+---
+
+<ActivityPage locale="es" {page} {settings} />

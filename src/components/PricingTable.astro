@@ -1,0 +1,66 @@
+---
+interface Price {
+	name: string;
+	duration: string;
+	price: string;
+	notes?: string;
+}
+
+interface Props {
+	items: Price[];
+	title: string;
+}
+
+const { items, title } = Astro.props;
+---
+
+<section aria-labelledby="pricing-title">
+	<h2 id="pricing-title">{title}</h2>
+	<div class="price-list">
+		{items.map((item) => (
+			<article class="price">
+				<div>
+					<h3>{item.name}</h3>
+					<p class="muted">{item.duration}</p>
+				</div>
+				<strong>{item.price}</strong>
+				{item.notes && <p>{item.notes}</p>}
+			</article>
+		))}
+	</div>
+</section>
+
+<style>
+	.price-list {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.price {
+		display: grid;
+		padding: 1.25rem;
+		border: 1px solid rgb(7 89 133 / 14%);
+		border-radius: 1rem;
+		background: var(--white);
+		gap: 0.6rem 1rem;
+	}
+
+	h3,
+	p {
+		margin: 0;
+	}
+
+	strong {
+		color: var(--ocean-800);
+	}
+
+	@media (min-width: 35rem) {
+		.price {
+			grid-template-columns: 1fr auto;
+		}
+
+		.price > p {
+			grid-column: 1 / -1;
+		}
+	}
+</style>
