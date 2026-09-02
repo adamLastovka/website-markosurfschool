@@ -1,10 +1,11 @@
 pageType: home
 seoTitle: Surf and kitesurf lessons in Mancora
 seoDescription: Private surf and kitesurf instruction for all levels in Mancora, Peru.
-heroTitle: Ride the waves of Mancora
+heroTitle: Ride the waves of Mancora test en
 heroSubtitle: Friendly, personal surf and kitesurf lessons on Peru's sunny north coast.
 aboutTitle: Learn safely. Have fun.
-aboutBody: Whether it is your first wave or your next kitesurf progression, every lesson is adapted to your experience, the conditions, and your goals.
+aboutBody: Whether it is your first wave or your next kitesurf progression,
+  every lesson is adapted to your experience, the conditions, and your goals.
 gallery:
   - image: /images/surf-lesson.svg
     alt: Surf lesson in the warm water of Mancora
@@ -14,9 +15,11 @@ gallery:
     caption: Reliable wind and personal coaching
 surfTeaser:
   title: Surf
-  summary: Discover warm-water waves with patient coaching, quality equipment, and a lesson paced for you.
+  summary: Discover warm-water waves with patient coaching, quality equipment, and
+    a lesson paced for you.
   buttonLabel: Explore surf lessons
 kitesurfTeaser:
   title: Kitesurf
-  summary: Learn kite control and riding skills with safety-focused instruction matched to the day's conditions.
+  summary: Learn kite control and riding skills with safety-focused instruction
+    matched to the day's conditions.
   buttonLabel: Explore kitesurf lessons

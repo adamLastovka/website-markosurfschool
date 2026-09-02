@@ -1,10 +1,12 @@
 pageType: home
 seoTitle: Clases de surf y kitesurf en Máncora
 seoDescription: Clases personales de surf y kitesurf para todos los niveles en Máncora, Perú.
-heroTitle: Disfruta las olas de Máncora
-heroSubtitle: Clases cercanas y personales de surf y kitesurf en la soleada costa norte del Perú.
+heroTitle: Disfruta las olas de Máncora test es
+heroSubtitle: Clases cercanas y personales de surf y kitesurf en la soleada
+  costa norte del Perú.
 aboutTitle: Aprende con seguridad. Disfruta.
-aboutBody: Ya sea tu primera ola o tu próximo avance en kitesurf, cada clase se adapta a tu experiencia, las condiciones y tus objetivos.
+aboutBody: Ya sea tu primera ola o tu próximo avance en kitesurf, cada clase se
+  adapta a tu experiencia, las condiciones y tus objetivos.
 gallery:
   - image: /images/surf-lesson.svg
     alt: Clase de surf en las aguas cálidas de Máncora
@@ -14,9 +16,11 @@ gallery:
     caption: Viento confiable y enseñanza personal
 surfTeaser:
   title: Surf
-  summary: Descubre olas de agua cálida con enseñanza paciente, buen equipo y una clase a tu ritmo.
+  summary: Descubre olas de agua cálida con enseñanza paciente, buen equipo y una
+    clase a tu ritmo.
   buttonLabel: Ver clases de surf
 kitesurfTeaser:
   title: Kitesurf
-  summary: Aprende control de cometa y navegación con clases seguras adaptadas a las condiciones del día.
+  summary: Aprende control de cometa y navegación con clases seguras adaptadas a
+    las condiciones del día.
   buttonLabel: Ver clases de kitesurf
